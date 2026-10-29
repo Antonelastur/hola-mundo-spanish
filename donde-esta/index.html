@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Dónde está? · Lecție de limba spaniolă</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2226%22 font-size=%2226%22>📦</text></svg>">
+  <link rel="stylesheet" href="css/donde-esta.css">
+</head>
+<body>
+  <a class="skip" href="#panel">Sari la activitate</a>
+
+  <header class="top">
+    <p class="eyebrow">Limba spaniolă · lecție introductivă</p>
+    <h1 lang="es">¿Dónde está?</h1>
+    <p class="sub" id="subtitulo"></p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Activitățile lecției">
+    <button type="button" role="tab" class="tab" data-act="exploracion" aria-controls="panel"><span class="tab-title"></span><span class="tab-status"></span></button>
+    <button type="button" role="tab" class="tab" data-act="comprension" aria-controls="panel"><span class="tab-title"></span><span class="tab-status"></span></button>
+    <button type="button" role="tab" class="tab" data-act="expresion" aria-controls="panel"><span class="tab-title"></span><span class="tab-status"></span></button>
+    <button type="button" role="tab" class="tab" data-act="final" aria-controls="panel"><span class="tab-title"></span><span class="tab-status"></span></button>
+  </nav>
+
+  <main class="layout">
+    <section class="scene-wrap" aria-label="Scena">
+      <div id="scene" class="scene">
+        <p id="scene-loading" class="scene-msg">Pornesc scena 3D…</p>
+      </div>
+      <div id="scene-notice" class="notice" role="alert" hidden></div>
+      <div id="camera-tools" class="btn-row camera-tools" hidden>
+        <button type="button" class="btn btn-small btn-ghost" id="cam-left"><span aria-hidden="true">⟲ </span>Rotește spre stânga</button>
+        <button type="button" class="btn btn-small btn-ghost" id="cam-reset">Vedere din față</button>
+        <button type="button" class="btn btn-small btn-ghost" id="cam-right">Rotește spre dreapta<span aria-hidden="true"> ⟳</span></button>
+      </div>
+      <p class="hint camera-hint" id="camera-hint" hidden>Cu mouse-ul: trage un obiect ca să-l muți; trage pe fundal ca să rotești camera.</p>
+      <p id="scene-status" class="scene-status" aria-live="polite"></p>
+      <details class="scene-desc">
+        <summary>Descrierea scenei în cuvinte</summary>
+        <ul id="scene-desc-list"></ul>
+      </details>
+    </section>
+
+    <section id="panel" class="panel" role="tabpanel" tabindex="-1" aria-live="off">
+      <p>Lecția pornește…</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <h2>Obiectivele lecției</h2>
+    <ul id="objetivos"></ul>
+  </footer>
+
+  <noscript><p class="notice">Lecția are nevoie de JavaScript. Activează JavaScript în browser și reîncarcă pagina.</p></noscript>
+
+  <!-- Conținutul lecției (editabil) -->
+  <script src="data/leccion-donde-esta.js"></script>
+  <!-- Logica aplicației -->
+  <script src="js/scene-layout.js"></script>
+  <script src="js/scene-state.js"></script>
+  <script src="js/lesson-logic.js"></script>
+  <script src="js/view-3d.js"></script>
+  <script src="js/view-2d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
